@@ -186,6 +186,7 @@
     <Content Include="Assets\build\images\if_medical_icon_3_1290986.png" />
     <Content Include="Assets\build\images\if_surgeon_45573 %281%29.png" />
     <Content Include="Assets\build\images\if_surgeon_45573.png" />
+    <Content Include="Assets\build\images\list.png" />
     <Content Include="Assets\build\images\loading.gif" />
     <Content Include="Assets\build\images\medicine.png" />
     <Content Include="Assets\build\js\custom.js" />
