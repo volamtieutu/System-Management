@@ -15,6 +15,7 @@ namespace SystemMngmt.Models
     public partial class TimeWork
     {
         public string Session { get; set; }
+        
         public System.TimeSpan Begin_time { get; set; }
         public System.TimeSpan End_time { get; set; }
     }

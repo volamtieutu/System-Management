@@ -13,10 +13,10 @@ namespace SystemMngmt.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DrNguyenClinicEntities : DbContext
+    public partial class DrNguyenClinicEntities1 : DbContext
     {
-        public DrNguyenClinicEntities()
-            : base("name=DrNguyenClinicEntities")
+        public DrNguyenClinicEntities1()
+            : base("name=DrNguyenClinicEntities1")
         {
         }
     

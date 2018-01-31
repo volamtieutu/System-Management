@@ -1,0 +1,35 @@
+﻿@model SystemMngmt.Models.TimeWork
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TimeWork</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Begin_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Begin_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.End_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.End_time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Session }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

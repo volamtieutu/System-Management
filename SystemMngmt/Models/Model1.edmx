@@ -399,7 +399,7 @@
           <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="*" />
           <End Role="Disease" Type="Self.Disease" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="DrNguyenClinicEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DrNguyenClinicEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Book_appointments" EntityType="Self.Book_appointment" />
           <EntitySet Name="Diagnostics" EntityType="Self.Diagnostic" />
           <EntitySet Name="Diseases" EntityType="Self.Disease" />
@@ -436,7 +436,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DrNguyenClinicModelStoreContainer" CdmEntityContainer="DrNguyenClinicEntities">
+        <EntityContainerMapping StorageEntityContainer="DrNguyenClinicModelStoreContainer" CdmEntityContainer="DrNguyenClinicEntities1">
           <EntitySetMapping Name="Book_appointments">
             <EntityTypeMapping TypeName="DrNguyenClinicModel.Book_appointment">
               <MappingFragment StoreEntitySet="Book appointment">
