@@ -119,6 +119,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DiseasesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TimeWorksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -4488,6 +4489,11 @@
     <Content Include="Views\TimeWorks\Details.cshtml" />
     <Content Include="Views\TimeWorks\Edit.cshtml" />
     <Content Include="Views\TimeWorks\Index.cshtml" />
+    <Content Include="Views\Diseases\Create.cshtml" />
+    <Content Include="Views\Diseases\Delete.cshtml" />
+    <Content Include="Views\Diseases\Details.cshtml" />
+    <Content Include="Views\Diseases\Edit.cshtml" />
+    <Content Include="Views\Diseases\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
