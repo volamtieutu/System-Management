@@ -69,7 +69,7 @@
                                 <li>
                                     <a><img src="~/Assets/build/images/medicine.png" /> THUỐC <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="form.html">NHẬP THUỐC</a></li>
+                                        <li>@Html.ActionLink("NHẬP THUỐC", "Index", "Medicines")</li>
                                         <li><a href="form.html">XUẤT THUỐC</a></li>
                                     </ul>
                                 </li>
@@ -135,11 +135,11 @@
             <!-- /top navigation -->
             <!-- page content -->
             <div class="right_col" role="main">
-               @RenderBody()
+               @RenderBody()                
             </div>
             <!-- /page content -->
             <!-- footer content -->
-            <footer>
+            <footer>                
                 <div class="pull-right">
                     Phòng mạch BS Nguyễn
                 </div>
