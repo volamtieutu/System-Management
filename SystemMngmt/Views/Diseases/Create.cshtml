@@ -1,0 +1,61 @@
+﻿@model SystemMngmt.Models.Disease
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    
+    <h2 class="modal-title">THÊM BỆNH</h2>
+    
+<hr/>
+<div class="clear"></div>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Disease_ID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Disease_ID)
+                @Html.ValidationMessageFor(model => model.Disease_ID)
+            </div>
+        </div>
+
+       <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Note, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Note)
+                @Html.ValidationMessageFor(model => model.Note)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <span id="progress" class="text-center" style="display: none;">
+                    <img src="~/Content/images/ajax-loader.gif" alt="wait" />
+                    Wait..
+                </span>                
+                <input type="submit" value="THÊM" class="btn btn-default btn-primary" />
+                <button class="btn btn-group-lg" data-dismiss="modal">
+                    @Html.ActionLink("Quay lại", "Index")
+                </button>
+            </div>     
+        </div>
+    </div>
+}
+
+

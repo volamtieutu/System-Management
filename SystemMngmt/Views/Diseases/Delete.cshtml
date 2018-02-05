@@ -1,0 +1,45 @@
+﻿@model SystemMngmt.Models.Disease
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có chắc muốn xóa không?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <span id="progress" class="text-center" style="display: none;">
+                <img src="~/Content/images/ajax-loader.gif" alt="wait" />
+                Wait..
+            </span>
+            <input type="submit" id="btnDelete" value="CÓ" class="btn btn-default btn-danger" />
+            <button class="btn btn-group-lg" data-dismiss="modal">@Html.ActionLink("Quay lại", "Index")</button>
+        </div>
+    }
+</div>
