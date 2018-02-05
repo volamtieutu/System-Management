@@ -12,13 +12,13 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Member
+    public partial class user_info
     {
-        public string UserName { get; set; }
-        public string Member_Name { get; set; }
-        public string Member_Phone { get; set; }
-        public string Passoword { get; set; }
-        public string Member_Email { get; set; }
-        public string Member_Role { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string name { get; set; }
+        public string role { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
     }
 }

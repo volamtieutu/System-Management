@@ -12,21 +12,20 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Patient
+    public partial class patient
     {
-        public Patient()
+        public patient()
         {
-            this.Diagnostics = new HashSet<Diagnostic>();
+            this.diagnostics = new HashSet<diagnostic>();
         }
     
-        public string Patient_ID { get; set; }
-        public string Name { get; set; }
-        public System.DateTime Birth { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-        public string Phone { get; set; }
-        public string Status { get; set; }
+        public string patient_id { get; set; }
+        public string name { get; set; }
+        public int age { get; set; }
+        public string address { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
     
-        public virtual ICollection<Diagnostic> Diagnostics { get; set; }
+        public virtual ICollection<diagnostic> diagnostics { get; set; }
     }
 }

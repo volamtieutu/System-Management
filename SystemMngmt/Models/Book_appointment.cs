@@ -12,13 +12,13 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Book_appointment
+    public partial class book_appointment
     {
-        public byte[] Book_ID { get; set; }
-        public string Session { get; set; }
-        public int Order_number { get; set; }
-        public System.DateTime Appointment_date { get; set; }
-        public string Name { get; set; }
-        public string Phone { get; set; }
+        public string book_id { get; set; }
+        public string session { get; set; }
+        public int order_number { get; set; }
+        public System.DateTime appointment_date { get; set; }
+        public string name { get; set; }
+        public string phone { get; set; }
     }
 }

@@ -12,16 +12,16 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Medicine_Detail
+    public partial class medicine_detail
     {
-        public string Prescribing_ID { get; set; }
-        public string Medicine_ID { get; set; }
-        public string Dosage { get; set; }
-        public int Amount { get; set; }
-        public long Price { get; set; }
-        public string Note { get; set; }
+        public string medicine_id { get; set; }
+        public string prescribing_id { get; set; }
+        public int amount { get; set; }
+        public string dosage { get; set; }
+        public long price { get; set; }
+        public string note { get; set; }
     
-        public virtual Medicine Medicine { get; set; }
-        public virtual Prescribing Prescribing { get; set; }
+        public virtual medicine medicine { get; set; }
+        public virtual prescribing prescribing { get; set; }
     }
 }

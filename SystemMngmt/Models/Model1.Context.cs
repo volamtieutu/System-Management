@@ -13,10 +13,10 @@ namespace SystemMngmt.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DrNguyenClinicEntities1 : DbContext
+    public partial class TheClinicEntities : DbContext
     {
-        public DrNguyenClinicEntities1()
-            : base("name=DrNguyenClinicEntities1")
+        public TheClinicEntities()
+            : base("name=TheClinicEntities")
         {
         }
     
@@ -25,15 +25,15 @@ namespace SystemMngmt.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Book_appointment> Book_appointments { get; set; }
-        public DbSet<Diagnostic> Diagnostics { get; set; }
-        public DbSet<Disease> Diseases { get; set; }
-        public DbSet<Medicine> Medicines { get; set; }
-        public DbSet<Medicine_Detail> Medicine_Detail { get; set; }
-        public DbSet<Member> Members { get; set; }
-        public DbSet<Patient> Patients { get; set; }
-        public DbSet<Prescribing> Prescribings { get; set; }
+        public DbSet<book_appointment> book_appointment { get; set; }
+        public DbSet<diagnostic> diagnostics { get; set; }
+        public DbSet<disease> diseases { get; set; }
+        public DbSet<medicine> medicines { get; set; }
+        public DbSet<patient> patients { get; set; }
+        public DbSet<prescribing> prescribings { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<TimeWork> TimeWorks { get; set; }
+        public DbSet<timework> timeworks { get; set; }
+        public DbSet<user_info> user_info { get; set; }
+        public DbSet<medicine_detail> medicine_detail { get; set; }
     }
 }
