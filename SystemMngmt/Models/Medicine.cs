@@ -12,22 +12,22 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class medicine
+    public partial class Medicine
     {
-        public medicine()
+        public Medicine()
         {
-            this.medicine_detail = new HashSet<medicine_detail>();
+            this.Medicine_detail = new HashSet<Medicine_detail>();
         }
     
         public string medicine_id { get; set; }
         public string name { get; set; }
-        public string type { get; set; }
-        public string original_medicine { get; set; }
-        public System.DateTime input_date { get; set; }
-        public System.DateTime expiration_date { get; set; }
         public int amount { get; set; }
         public long price_per_unit { get; set; }
+        public string type { get; set; }
+        public System.DateTime input_date { get; set; }
+        public string original_medicine { get; set; }
+        public System.DateTime expiration_date { get; set; }
     
-        public virtual ICollection<medicine_detail> medicine_detail { get; set; }
+        public virtual ICollection<Medicine_detail> Medicine_detail { get; set; }
     }
 }

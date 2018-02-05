@@ -12,7 +12,7 @@ namespace SystemMngmt.Controllers
 {
     public class DiseasesController : Controller
     {
-        private DrNguyenClinicEntities1 db = new DrNguyenClinicEntities1();
+        private TheClinicEntities1 db = new TheClinicEntities1();
 
         // GET: /Diseases/
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace SystemMngmt.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Disease_ID,Name,Note")] Disease disease)
+        public ActionResult Create([Bind(Include="disease_id,name,note")] Disease disease)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace SystemMngmt.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Disease_ID,Name,Note")] Disease disease)
+        public ActionResult Edit([Bind(Include="disease_id,name,note")] Disease disease)
         {
             if (ModelState.IsValid)
             {

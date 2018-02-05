@@ -12,17 +12,17 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class disease
+    public partial class Disease
     {
-        public disease()
+        public Disease()
         {
-            this.diagnostics = new HashSet<diagnostic>();
+            this.Diagnostics = new HashSet<Diagnostic>();
         }
     
         public string disease_id { get; set; }
         public string name { get; set; }
         public string note { get; set; }
     
-        public virtual ICollection<diagnostic> diagnostics { get; set; }
+        public virtual ICollection<Diagnostic> Diagnostics { get; set; }
     }
 }

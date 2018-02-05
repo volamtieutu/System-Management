@@ -13,10 +13,10 @@ namespace SystemMngmt.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TheClinicEntities : DbContext
+    public partial class TheClinicEntities1 : DbContext
     {
-        public TheClinicEntities()
-            : base("name=TheClinicEntities")
+        public TheClinicEntities1()
+            : base("name=TheClinicEntities1")
         {
         }
     
@@ -26,14 +26,14 @@ namespace SystemMngmt.Models
         }
     
         public DbSet<book_appointment> book_appointment { get; set; }
-        public DbSet<diagnostic> diagnostics { get; set; }
-        public DbSet<disease> diseases { get; set; }
-        public DbSet<medicine> medicines { get; set; }
-        public DbSet<patient> patients { get; set; }
-        public DbSet<prescribing> prescribings { get; set; }
+        public DbSet<Diagnostic> Diagnostics { get; set; }
+        public DbSet<Disease> Diseases { get; set; }
+        public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Prescribing> Prescribings { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<timework> timeworks { get; set; }
+        public DbSet<Timework> Timeworks { get; set; }
         public DbSet<user_info> user_info { get; set; }
-        public DbSet<medicine_detail> medicine_detail { get; set; }
+        public DbSet<Medicine_detail> Medicine_detail { get; set; }
     }
 }

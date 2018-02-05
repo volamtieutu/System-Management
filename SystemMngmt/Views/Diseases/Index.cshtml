@@ -5,48 +5,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<script>
-    $(document).ready(function () {
-        $('#tbPrograms').DataTable({
-            responsive: true,
-            "lengthMenu": [[5, 10, 15, 20, 25, 50, 100, -1], [5, 10, 15, 20, 25, 50, 100, "All"]]
-        });
-    });
-</script>
-<h2>DANH SÁCH TÊN BỆNH</h2>
+<h2>Index</h2>
 
 <p>
-    <a class="btn btn-success" data-modal="" href="/Diseases/Create" id="btnCreate">
-        THÊM MỚI
-    </a>
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-hover">
-    <thead>
+<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Note)
+            @Html.DisplayNameFor(model => model.note)
         </th>
         <th></th>
     </tr>
-        </thead>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Note)
+            @Html.DisplayFor(modelItem => item.note)
         </td>
         <td>
-            @Html.Raw("<a data-modal='' href='/Diseases/Edit/" + item.Disease_ID + "' id='" + item.Disease_ID + "'  title='Edit'> <span class='glyphicon glyphicon-edit'> </span> </a>") |
-            @Html.Raw("<a data-modal='' href='/Diseases/Delete/" + item.Disease_ID + "' id='" + item.Disease_ID + "'  title='Delete'> <span class='glyphicon glyphicon-trash'> </span> </a>")
+            @Html.ActionLink("Edit", "Edit", new { id=item.disease_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.disease_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.disease_id })
         </td>
     </tr>
 }

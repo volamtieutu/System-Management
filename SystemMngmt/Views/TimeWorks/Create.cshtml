@@ -1,65 +1,61 @@
-﻿@model SystemMngmt.Models.TimeWork
+﻿@model SystemMngmt.Models.Timework
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-    
-    <h2 class="modal-title">THÊM GIỜ LÀM VIỆC</h2>
-    <hr/>
-
+<h2>Create</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        
-     
+        <h4>Timework</h4>
+        <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Session, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.timework_id, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Session)
-                @Html.ValidationMessageFor(model => model.Session)
+                @Html.EditorFor(model => model.timework_id)
+                @Html.ValidationMessageFor(model => model.timework_id)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Begin_time, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.session, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Begin_time)
-                @Html.ValidationMessageFor(model => model.Begin_time)
+                @Html.EditorFor(model => model.session)
+                @Html.ValidationMessageFor(model => model.session)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.End_time, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.begin_time, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.End_time)
-                @Html.ValidationMessageFor(model => model.End_time)
+                @Html.EditorFor(model => model.begin_time)
+                @Html.ValidationMessageFor(model => model.begin_time)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.end_time, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.end_time)
+                @Html.ValidationMessageFor(model => model.end_time)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <span id="progress" class="text-center" style="display: none;">
-                    <img src="~/Content/images/ajax-loader.gif" alt="wait" />
-                    Wait..
-                </span>
-                <input type="submit" value="THÊM" class="btn btn-default btn-primary" />
-                <button class="btn btn-group-lg" data-dismiss="modal">
-                @Html.ActionLink("Quay lại", "Index")
-                </button>
-
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    
+    @Html.ActionLink("Back to List", "Index")
 </div>

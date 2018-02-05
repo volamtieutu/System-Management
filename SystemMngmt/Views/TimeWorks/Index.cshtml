@@ -1,53 +1,44 @@
-﻿@model IEnumerable<SystemMngmt.Models.TimeWork>
+﻿@model IEnumerable<SystemMngmt.Models.Timework>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<script>
-    $(document).ready(function () {
-        $('#tbPrograms').DataTable({
-            responsive: true,
-            "lengthMenu": [[5, 10, 15, 20, 25, 50, 100, -1], [5, 10, 15, 20, 25, 50, 100, "All"]]
-        });
-    });
-</script>
-
-<h2>GIỜ KHÁM BỆNH</h2>
+<h2>Index</h2>
 
 <p>
-    <a class="btn btn-success" data-modal="" href="/TimeWorks/Create" id="btnCreate">
-        THÊM MỚI
-    </a>
+    @Html.ActionLink("Create New", "Create")
 </p>
-
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Buổi</th>
-            <th scope="col">Bắt đầu</th>
-            <th scope="col">Kết thúc</th>
-        </tr>
-    </thead>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.session)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.begin_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_time)
+        </th>
+        <th></th>
+    </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Session)
+            @Html.DisplayFor(modelItem => item.session)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Begin_time)
+            @Html.DisplayFor(modelItem => item.begin_time)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.End_time)
+            @Html.DisplayFor(modelItem => item.end_time)
         </td>
         <td>
-            @Html.Raw("<a data-modal='' href='/TimeWorks/Edit/" + item.Session + "' id='" + item.Session + "'  title='Edit'> <span class='glyphicon glyphicon-edit'> </span> </a>") |
-            @Html.Raw("<a data-modal='' href='/TimeWorks/Delete/" + item.Session + "' id='" + item.Session + "'  title='Delete'> <span class='glyphicon glyphicon-trash'> </span> </a>")
+            @Html.ActionLink("Edit", "Edit", new { id=item.timework_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.timework_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.timework_id })
         </td>
     </tr>
 }

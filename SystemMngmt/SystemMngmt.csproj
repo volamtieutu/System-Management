@@ -122,23 +122,23 @@
     <Compile Include="Controllers\DiseasesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MedicinesController.cs" />
-    <Compile Include="Controllers\TimeWorksController.cs" />
+    <Compile Include="Controllers\TimeworksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\book_appointment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\diagnostic.cs">
+    <Compile Include="Models\Diagnostic.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\disease.cs">
+    <Compile Include="Models\Disease.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\medicine.cs">
+    <Compile Include="Models\Medicine.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\medicine_detail.cs">
+    <Compile Include="Models\Medicine_detail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -156,16 +156,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\patient.cs">
+    <Compile Include="Models\Patient.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\prescribing.cs">
+    <Compile Include="Models\Prescribing.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\timework.cs">
+    <Compile Include="Models\Timework.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user_info.cs">
@@ -4485,11 +4485,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\TimeWorks\Create.cshtml" />
-    <Content Include="Views\TimeWorks\Delete.cshtml" />
-    <Content Include="Views\TimeWorks\Details.cshtml" />
-    <Content Include="Views\TimeWorks\Edit.cshtml" />
-    <Content Include="Views\TimeWorks\Index.cshtml" />
+    <Content Include="Views\Timeworks\Create.cshtml" />
+    <Content Include="Views\Timeworks\Delete.cshtml" />
+    <Content Include="Views\Timeworks\Details.cshtml" />
+    <Content Include="Views\Timeworks\Edit.cshtml" />
+    <Content Include="Views\Timeworks\Index.cshtml" />
     <Content Include="Views\Diseases\Create.cshtml" />
     <Content Include="Views\Diseases\Delete.cshtml" />
     <Content Include="Views\Diseases\Details.cshtml" />

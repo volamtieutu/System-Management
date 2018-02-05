@@ -13,25 +13,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Amount)
+            @Html.DisplayNameFor(model => model.amount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.price_per_unit)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Types)
+            @Html.DisplayNameFor(model => model.type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Input_date)
+            @Html.DisplayNameFor(model => model.input_date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Original_medicine)
+            @Html.DisplayNameFor(model => model.original_medicine)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Expiration_Date)
+            @Html.DisplayNameFor(model => model.expiration_date)
         </th>
         <th></th>
     </tr>
@@ -39,30 +39,30 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Amount)
+            @Html.DisplayFor(modelItem => item.amount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Price)
+            @Html.DisplayFor(modelItem => item.price_per_unit)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Types)
+            @Html.DisplayFor(modelItem => item.type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Input_date)
+            @Html.DisplayFor(modelItem => item.input_date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Original_medicine)
+            @Html.DisplayFor(modelItem => item.original_medicine)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Expiration_Date)
+            @Html.DisplayFor(modelItem => item.expiration_date)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Medicine_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Medicine_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Medicine_ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.medicine_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.medicine_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.medicine_id })
         </td>
     </tr>
 }

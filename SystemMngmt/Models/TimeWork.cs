@@ -12,9 +12,9 @@ namespace SystemMngmt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class timework
+    public partial class Timework
     {
-        public string id { get; set; }
+        public string timework_id { get; set; }
         public string session { get; set; }
         public System.TimeSpan begin_time { get; set; }
         public System.TimeSpan end_time { get; set; }

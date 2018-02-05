@@ -1,30 +1,39 @@
-﻿@model SystemMngmt.Models.TimeWork
+﻿@model SystemMngmt.Models.Timework
 
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Delete</h2>
 
-<h3>Bạn có chắc muốn xóa không?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-   
+    <h4>Timework</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Begin_time)
+            @Html.DisplayNameFor(model => model.session)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Begin_time)
+            @Html.DisplayFor(model => model.session)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.End_time)
+            @Html.DisplayNameFor(model => model.begin_time)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.End_time)
+            @Html.DisplayFor(model => model.begin_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.end_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.end_time)
         </dd>
 
     </dl>
@@ -33,13 +42,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <span id="progress" class="text-center" style="display: none;">
-                <img src="~/Content/images/ajax-loader.gif" alt="wait" />
-                Wait..
-            </span>
-            <input type="submit" id="btnDelete" value="CÓ" class="btn btn-default btn-danger" />
-            <button class="btn btn-group-lg" data-dismiss="modal">@Html.ActionLink("Quay lại","Index")</button>
-
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

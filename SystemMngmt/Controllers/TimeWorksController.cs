@@ -10,24 +10,24 @@ using SystemMngmt.Models;
 
 namespace SystemMngmt.Controllers
 {
-    public class TimeWorksController : Controller
+    public class TimeworksController : Controller
     {
-        private DrNguyenClinicEntities1 db = new DrNguyenClinicEntities1();
+        private TheClinicEntities1 db = new TheClinicEntities1();
 
-        // GET: /TimeWorks/
+        // GET: /Timeworks/
         public ActionResult Index()
         {
-            return View(db.TimeWorks.ToList());
+            return View(db.Timeworks.ToList());
         }
 
-        // GET: /TimeWorks/Details/5
+        // GET: /Timeworks/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TimeWork timework = db.TimeWorks.Find(id);
+            Timework timework = db.Timeworks.Find(id);
             if (timework == null)
             {
                 return HttpNotFound();
@@ -35,22 +35,22 @@ namespace SystemMngmt.Controllers
             return View(timework);
         }
 
-        // GET: /TimeWorks/Create
+        // GET: /Timeworks/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: /TimeWorks/Create
+        // POST: /Timeworks/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Session,Begin_time,End_time")] TimeWork timework)
+        public ActionResult Create([Bind(Include="timework_id,session,begin_time,end_time")] Timework timework)
         {
             if (ModelState.IsValid)
             {
-                db.TimeWorks.Add(timework);
+                db.Timeworks.Add(timework);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,14 +58,14 @@ namespace SystemMngmt.Controllers
             return View(timework);
         }
 
-        // GET: /TimeWorks/Edit/5
+        // GET: /Timeworks/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TimeWork timework = db.TimeWorks.Find(id);
+            Timework timework = db.Timeworks.Find(id);
             if (timework == null)
             {
                 return HttpNotFound();
@@ -73,12 +73,12 @@ namespace SystemMngmt.Controllers
             return View(timework);
         }
 
-        // POST: /TimeWorks/Edit/5
+        // POST: /Timeworks/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Session,Begin_time,End_time")] TimeWork timework)
+        public ActionResult Edit([Bind(Include="timework_id,session,begin_time,end_time")] Timework timework)
         {
             if (ModelState.IsValid)
             {
@@ -89,14 +89,14 @@ namespace SystemMngmt.Controllers
             return View(timework);
         }
 
-        // GET: /TimeWorks/Delete/5
+        // GET: /Timeworks/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TimeWork timework = db.TimeWorks.Find(id);
+            Timework timework = db.Timeworks.Find(id);
             if (timework == null)
             {
                 return HttpNotFound();
@@ -104,13 +104,13 @@ namespace SystemMngmt.Controllers
             return View(timework);
         }
 
-        // POST: /TimeWorks/Delete/5
+        // POST: /Timeworks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            TimeWork timework = db.TimeWorks.Find(id);
-            db.TimeWorks.Remove(timework);
+            Timework timework = db.Timeworks.Find(id);
+            db.Timeworks.Remove(timework);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

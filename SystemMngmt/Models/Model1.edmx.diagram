@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bb47fc391cab47b99e664492d8474aa8" Name="Diagram1">
+      <Diagram DiagramId="5a62801858d443b69f37c33989e7328a" Name="Diagram1">
         <EntityTypeShape EntityType="TheClinicModel.book_appointment" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.diagnostic" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.disease" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.medicine" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.patient" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.prescribing" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheClinicModel.Diagnostic" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheClinicModel.Disease" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheClinicModel.Medicine" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheClinicModel.Patient" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheClinicModel.Prescribing" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TheClinicModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.timework" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheClinicModel.Timework" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TheClinicModel.user_info" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheClinicModel.medicine_detail" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
-        <AssociationConnector Association="TheClinicModel.FK_diagnostic_patients" ManuallyRouted="false" />
-        <AssociationConnector Association="TheClinicModel.FK_prescribing_diagnostic" ManuallyRouted="false" />
-        <AssociationConnector Association="TheClinicModel.FK_medicine_detail_medicine" ManuallyRouted="false" />
-        <AssociationConnector Association="TheClinicModel.FK_medicine_detail_prescribing" ManuallyRouted="false" />
-        <AssociationConnector Association="TheClinicModel.diagnostic_detail" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TheClinicModel.Medicine_detail" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="TheClinicModel.FK_Diagnostic_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="TheClinicModel.FK_Prescribing_Diagnostic" ManuallyRouted="false" />
+        <AssociationConnector Association="TheClinicModel.FK_Medicine_detail_Medicine" ManuallyRouted="false" />
+        <AssociationConnector Association="TheClinicModel.FK_Medicine_detail_Prescribing" ManuallyRouted="false" />
+        <AssociationConnector Association="TheClinicModel.Diagnostic_detail" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

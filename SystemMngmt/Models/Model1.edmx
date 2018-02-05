@@ -16,84 +16,83 @@
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
-        <EntityType Name="diagnostic">
+        <EntityType Name="Diagnostic">
           <Key>
             <PropertyRef Name="diagnostic_id" />
           </Key>
-          <Property Name="diagnostic_id" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="patient_id" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="disease_id" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="diagnostic_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="patient_id" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="note" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'TheClinic.dbo.diagnostic_detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="diagnostic_detail">
+warning 6002: The table/view 'TheClinic.dbo.Diagnostic_detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Diagnostic_detail">
           <Key>
             <PropertyRef Name="diagnostic_id" />
             <PropertyRef Name="disease_id" />
           </Key>
-          <Property Name="diagnostic_id" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="disease_id" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="diagnostic_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="disease_id" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <EntityType Name="disease">
+        <EntityType Name="Disease">
           <Key>
             <PropertyRef Name="disease_id" />
           </Key>
-          <Property Name="disease_id" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="disease_id" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="note" Type="nvarchar" MaxLength="100" />
+          <Property Name="note" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <EntityType Name="medicine">
+        <EntityType Name="Medicine">
           <Key>
             <PropertyRef Name="medicine_id" />
           </Key>
-          <Property Name="medicine_id" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="medicine_id" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="original_medicine" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="input_date" Type="date" Nullable="false" />
-          <Property Name="expiration_date" Type="date" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
           <Property Name="price_per_unit" Type="bigint" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="input_date" Type="date" Nullable="false" />
+          <Property Name="original_medicine" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="expiration_date" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'TheClinic.dbo.medicine_detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="medicine_detail">
+warning 6002: The table/view 'TheClinic.dbo.Medicine_detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Medicine_detail">
           <Key>
             <PropertyRef Name="medicine_id" />
             <PropertyRef Name="prescribing_id" />
-            <PropertyRef Name="amount" />
             <PropertyRef Name="dosage" />
+            <PropertyRef Name="amount" />
             <PropertyRef Name="price" />
           </Key>
-          <Property Name="medicine_id" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="prescribing_id" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="medicine_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="prescribing_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="dosage" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
-          <Property Name="dosage" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="price" Type="bigint" Nullable="false" />
           <Property Name="note" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="patients">
+        <EntityType Name="Patients">
           <Key>
             <PropertyRef Name="patient_id" />
           </Key>
-          <Property Name="patient_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="patient_id" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="age" Type="int" Nullable="false" />
           <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="email" Type="nchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="prescribing">
+        <EntityType Name="Prescribing">
           <Key>
             <PropertyRef Name="prescribing_id" />
           </Key>
-          <Property Name="prescribing_id" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="diagnostic_id" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="prescribing_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="diagnostic_id" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="examination_fee" Type="bigint" Nullable="false" />
-          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -105,11 +104,11 @@ warning 6002: The table/view 'TheClinic.dbo.medicine_detail' does not have a pri
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="timework">
+        <EntityType Name="Timework">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="timework_id" />
           </Key>
-          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="timework_id" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="session" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="begin_time" Type="time" Precision="7" Nullable="false" />
           <Property Name="end_time" Type="time" Precision="7" Nullable="false" />
@@ -118,134 +117,134 @@ warning 6002: The table/view 'TheClinic.dbo.medicine_detail' does not have a pri
           <Key>
             <PropertyRef Name="username" />
           </Key>
-          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="role" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="phone" Type="nchar" MaxLength="15" Nullable="false" />
-          <Property Name="email" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
-        <Association Name="FK_diagnostic_detail_diagnostic">
-          <End Role="diagnostic" Type="Self.diagnostic" Multiplicity="1" />
-          <End Role="diagnostic_detail" Type="Self.diagnostic_detail" Multiplicity="*" />
+        <Association Name="FK_Diagnostic_detail_Diagnostic">
+          <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="1" />
+          <End Role="Diagnostic_detail" Type="Self.Diagnostic_detail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="diagnostic">
+            <Principal Role="Diagnostic">
               <PropertyRef Name="diagnostic_id" />
             </Principal>
-            <Dependent Role="diagnostic_detail">
+            <Dependent Role="Diagnostic_detail">
               <PropertyRef Name="diagnostic_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_diagnostic_detail_disease">
-          <End Role="disease" Type="Self.disease" Multiplicity="1" />
-          <End Role="diagnostic_detail" Type="Self.diagnostic_detail" Multiplicity="*" />
+        <Association Name="FK_Diagnostic_detail_Disease">
+          <End Role="Disease" Type="Self.Disease" Multiplicity="1" />
+          <End Role="Diagnostic_detail" Type="Self.Diagnostic_detail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="disease">
+            <Principal Role="Disease">
               <PropertyRef Name="disease_id" />
             </Principal>
-            <Dependent Role="diagnostic_detail">
+            <Dependent Role="Diagnostic_detail">
               <PropertyRef Name="disease_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_diagnostic_patients">
-          <End Role="patients" Type="Self.patients" Multiplicity="1" />
-          <End Role="diagnostic" Type="Self.diagnostic" Multiplicity="*" />
+        <Association Name="FK_Diagnostic_Patients">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="patients">
+            <Principal Role="Patients">
               <PropertyRef Name="patient_id" />
             </Principal>
-            <Dependent Role="diagnostic">
+            <Dependent Role="Diagnostic">
               <PropertyRef Name="patient_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_medicine_detail_medicine">
-          <End Role="medicine" Type="Self.medicine" Multiplicity="1" />
-          <End Role="medicine_detail" Type="Self.medicine_detail" Multiplicity="*" />
+        <Association Name="FK_Medicine_detail_Medicine">
+          <End Role="Medicine" Type="Self.Medicine" Multiplicity="1" />
+          <End Role="Medicine_detail" Type="Self.Medicine_detail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="medicine">
+            <Principal Role="Medicine">
               <PropertyRef Name="medicine_id" />
             </Principal>
-            <Dependent Role="medicine_detail">
+            <Dependent Role="Medicine_detail">
               <PropertyRef Name="medicine_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_medicine_detail_prescribing">
-          <End Role="prescribing" Type="Self.prescribing" Multiplicity="1" />
-          <End Role="medicine_detail" Type="Self.medicine_detail" Multiplicity="*" />
+        <Association Name="FK_Medicine_detail_Prescribing">
+          <End Role="Prescribing" Type="Self.Prescribing" Multiplicity="1" />
+          <End Role="Medicine_detail" Type="Self.Medicine_detail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="prescribing">
+            <Principal Role="Prescribing">
               <PropertyRef Name="prescribing_id" />
             </Principal>
-            <Dependent Role="medicine_detail">
+            <Dependent Role="Medicine_detail">
               <PropertyRef Name="prescribing_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_prescribing_diagnostic">
-          <End Role="diagnostic" Type="Self.diagnostic" Multiplicity="1" />
-          <End Role="prescribing" Type="Self.prescribing" Multiplicity="*" />
+        <Association Name="FK_Prescribing_Diagnostic">
+          <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="1" />
+          <End Role="Prescribing" Type="Self.Prescribing" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="diagnostic">
+            <Principal Role="Diagnostic">
               <PropertyRef Name="diagnostic_id" />
             </Principal>
-            <Dependent Role="prescribing">
+            <Dependent Role="Prescribing">
               <PropertyRef Name="diagnostic_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="TheClinicModelStoreContainer">
           <EntitySet Name="book_appointment" EntityType="Self.book_appointment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="diagnostic" EntityType="Self.diagnostic" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="disease" EntityType="Self.disease" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="medicine" EntityType="Self.medicine" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="patients" EntityType="Self.patients" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="prescribing" EntityType="Self.prescribing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diagnostic" EntityType="Self.Diagnostic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Disease" EntityType="Self.Disease" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prescribing" EntityType="Self.Prescribing" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="timework" EntityType="Self.timework" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Timework" EntityType="Self.Timework" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_info" EntityType="Self.user_info" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="diagnostic_detail" EntityType="Self.diagnostic_detail" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="Diagnostic_detail" EntityType="Self.Diagnostic_detail" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-[diagnostic_detail].[diagnostic_id] AS [diagnostic_id], 
-[diagnostic_detail].[disease_id] AS [disease_id]
-FROM [dbo].[diagnostic_detail] AS [diagnostic_detail]</DefiningQuery>
+[Diagnostic_detail].[diagnostic_id] AS [diagnostic_id], 
+[Diagnostic_detail].[disease_id] AS [disease_id]
+FROM [dbo].[Diagnostic_detail] AS [Diagnostic_detail]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="medicine_detail" EntityType="Self.medicine_detail" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="Medicine_detail" EntityType="Self.Medicine_detail" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-[medicine_detail].[medicine_id] AS [medicine_id], 
-[medicine_detail].[prescribing_id] AS [prescribing_id], 
-[medicine_detail].[amount] AS [amount], 
-[medicine_detail].[dosage] AS [dosage], 
-[medicine_detail].[price] AS [price], 
-[medicine_detail].[note] AS [note]
-FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
+[Medicine_detail].[medicine_id] AS [medicine_id], 
+[Medicine_detail].[prescribing_id] AS [prescribing_id], 
+[Medicine_detail].[dosage] AS [dosage], 
+[Medicine_detail].[amount] AS [amount], 
+[Medicine_detail].[price] AS [price], 
+[Medicine_detail].[note] AS [note]
+FROM [dbo].[Medicine_detail] AS [Medicine_detail]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_diagnostic_detail_diagnostic" Association="Self.FK_diagnostic_detail_diagnostic">
-            <End Role="diagnostic" EntitySet="diagnostic" />
-            <End Role="diagnostic_detail" EntitySet="diagnostic_detail" />
+          <AssociationSet Name="FK_Diagnostic_detail_Diagnostic" Association="Self.FK_Diagnostic_detail_Diagnostic">
+            <End Role="Diagnostic" EntitySet="Diagnostic" />
+            <End Role="Diagnostic_detail" EntitySet="Diagnostic_detail" />
           </AssociationSet>
-          <AssociationSet Name="FK_diagnostic_detail_disease" Association="Self.FK_diagnostic_detail_disease">
-            <End Role="disease" EntitySet="disease" />
-            <End Role="diagnostic_detail" EntitySet="diagnostic_detail" />
+          <AssociationSet Name="FK_Diagnostic_detail_Disease" Association="Self.FK_Diagnostic_detail_Disease">
+            <End Role="Disease" EntitySet="Disease" />
+            <End Role="Diagnostic_detail" EntitySet="Diagnostic_detail" />
           </AssociationSet>
-          <AssociationSet Name="FK_diagnostic_patients" Association="Self.FK_diagnostic_patients">
-            <End Role="patients" EntitySet="patients" />
-            <End Role="diagnostic" EntitySet="diagnostic" />
+          <AssociationSet Name="FK_Diagnostic_Patients" Association="Self.FK_Diagnostic_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Diagnostic" EntitySet="Diagnostic" />
           </AssociationSet>
-          <AssociationSet Name="FK_medicine_detail_medicine" Association="Self.FK_medicine_detail_medicine">
-            <End Role="medicine" EntitySet="medicine" />
-            <End Role="medicine_detail" EntitySet="medicine_detail" />
+          <AssociationSet Name="FK_Medicine_detail_Medicine" Association="Self.FK_Medicine_detail_Medicine">
+            <End Role="Medicine" EntitySet="Medicine" />
+            <End Role="Medicine_detail" EntitySet="Medicine_detail" />
           </AssociationSet>
-          <AssociationSet Name="FK_medicine_detail_prescribing" Association="Self.FK_medicine_detail_prescribing">
-            <End Role="prescribing" EntitySet="prescribing" />
-            <End Role="medicine_detail" EntitySet="medicine_detail" />
+          <AssociationSet Name="FK_Medicine_detail_Prescribing" Association="Self.FK_Medicine_detail_Prescribing">
+            <End Role="Prescribing" EntitySet="Prescribing" />
+            <End Role="Medicine_detail" EntitySet="Medicine_detail" />
           </AssociationSet>
-          <AssociationSet Name="FK_prescribing_diagnostic" Association="Self.FK_prescribing_diagnostic">
-            <End Role="diagnostic" EntitySet="diagnostic" />
-            <End Role="prescribing" EntitySet="prescribing" />
+          <AssociationSet Name="FK_Prescribing_Diagnostic" Association="Self.FK_Prescribing_Diagnostic">
+            <End Role="Diagnostic" EntitySet="Diagnostic" />
+            <End Role="Prescribing" EntitySet="Prescribing" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -264,65 +263,64 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="diagnostic">
+        <EntityType Name="Diagnostic">
           <Key>
             <PropertyRef Name="diagnostic_id" />
           </Key>
-          <Property Name="diagnostic_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="patient_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="disease_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="diagnostic_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patient_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="note" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="patient" Relationship="Self.FK_diagnostic_patients" FromRole="diagnostic" ToRole="patients" />
-          <NavigationProperty Name="prescribings" Relationship="Self.FK_prescribing_diagnostic" FromRole="diagnostic" ToRole="prescribing" />
-          <NavigationProperty Name="diseases" Relationship="Self.diagnostic_detail" FromRole="diagnostic" ToRole="disease" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Diagnostic_Patients" FromRole="Diagnostic" ToRole="Patients" />
+          <NavigationProperty Name="Prescribings" Relationship="Self.FK_Prescribing_Diagnostic" FromRole="Diagnostic" ToRole="Prescribing" />
+          <NavigationProperty Name="Diseases" Relationship="Self.Diagnostic_detail" FromRole="Diagnostic" ToRole="Disease" />
         </EntityType>
-        <EntityType Name="disease">
+        <EntityType Name="Disease">
           <Key>
             <PropertyRef Name="disease_id" />
           </Key>
-          <Property Name="disease_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="disease_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="diagnostics" Relationship="Self.diagnostic_detail" FromRole="disease" ToRole="diagnostic" />
+          <Property Name="note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Diagnostics" Relationship="Self.Diagnostic_detail" FromRole="Disease" ToRole="Diagnostic" />
         </EntityType>
-        <EntityType Name="medicine">
+        <EntityType Name="Medicine">
           <Key>
             <PropertyRef Name="medicine_id" />
           </Key>
-          <Property Name="medicine_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="medicine_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="original_medicine" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="input_date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="expiration_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="price_per_unit" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="medicine_detail" Relationship="Self.FK_medicine_detail_medicine" FromRole="medicine" ToRole="medicine_detail" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="input_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="original_medicine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="expiration_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Medicine_detail" Relationship="Self.FK_Medicine_detail_Medicine" FromRole="Medicine" ToRole="Medicine_detail" />
         </EntityType>
-        <EntityType Name="patient">
+        <EntityType Name="Patient">
           <Key>
             <PropertyRef Name="patient_id" />
           </Key>
-          <Property Name="patient_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="patient_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="age" Type="Int32" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="diagnostics" Relationship="Self.FK_diagnostic_patients" FromRole="patients" ToRole="diagnostic" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Diagnostics" Relationship="Self.FK_Diagnostic_Patients" FromRole="Patients" ToRole="Diagnostic" />
         </EntityType>
-        <EntityType Name="prescribing">
+        <EntityType Name="Prescribing">
           <Key>
             <PropertyRef Name="prescribing_id" />
           </Key>
-          <Property Name="prescribing_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="diagnostic_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="prescribing_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diagnostic_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="examination_fee" Type="Int64" Nullable="false" />
-          <Property Name="status" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="diagnostic" Relationship="Self.FK_prescribing_diagnostic" FromRole="prescribing" ToRole="diagnostic" />
-          <NavigationProperty Name="medicine_detail" Relationship="Self.FK_medicine_detail_prescribing" FromRole="prescribing" ToRole="medicine_detail" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Diagnostic" Relationship="Self.FK_Prescribing_Diagnostic" FromRole="Prescribing" ToRole="Diagnostic" />
+          <NavigationProperty Name="Medicine_detail" Relationship="Self.FK_Medicine_detail_Prescribing" FromRole="Prescribing" ToRole="Medicine_detail" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -334,11 +332,11 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="timework">
+        <EntityType Name="Timework">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="timework_id" />
           </Key>
-          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="timework_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="session" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="begin_time" Type="Time" Nullable="false" Precision="7" />
           <Property Name="end_time" Type="Time" Nullable="false" Precision="7" />
@@ -347,112 +345,112 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
           <Key>
             <PropertyRef Name="username" />
           </Key>
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="medicine_detail">
+        <EntityType Name="Medicine_detail">
           <Key>
             <PropertyRef Name="medicine_id" />
             <PropertyRef Name="prescribing_id" />
-            <PropertyRef Name="amount" />
             <PropertyRef Name="dosage" />
+            <PropertyRef Name="amount" />
             <PropertyRef Name="price" />
           </Key>
-          <Property Name="medicine_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="prescribing_id" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="medicine_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="prescribing_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dosage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="dosage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="price" Type="Int64" Nullable="false" />
           <Property Name="note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="medicine" Relationship="Self.FK_medicine_detail_medicine" FromRole="medicine_detail" ToRole="medicine" />
-          <NavigationProperty Name="prescribing" Relationship="Self.FK_medicine_detail_prescribing" FromRole="medicine_detail" ToRole="prescribing" />
+          <NavigationProperty Name="Medicine" Relationship="Self.FK_Medicine_detail_Medicine" FromRole="Medicine_detail" ToRole="Medicine" />
+          <NavigationProperty Name="Prescribing" Relationship="Self.FK_Medicine_detail_Prescribing" FromRole="Medicine_detail" ToRole="Prescribing" />
         </EntityType>
-        <Association Name="FK_diagnostic_patients">
-          <End Role="patients" Type="Self.patient" Multiplicity="1" />
-          <End Role="diagnostic" Type="Self.diagnostic" Multiplicity="*" />
+        <Association Name="FK_Diagnostic_Patients">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="patients">
+            <Principal Role="Patients">
               <PropertyRef Name="patient_id" />
             </Principal>
-            <Dependent Role="diagnostic">
+            <Dependent Role="Diagnostic">
               <PropertyRef Name="patient_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_prescribing_diagnostic">
-          <End Role="diagnostic" Type="Self.diagnostic" Multiplicity="1" />
-          <End Role="prescribing" Type="Self.prescribing" Multiplicity="*" />
+        <Association Name="FK_Prescribing_Diagnostic">
+          <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="1" />
+          <End Role="Prescribing" Type="Self.Prescribing" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="diagnostic">
+            <Principal Role="Diagnostic">
               <PropertyRef Name="diagnostic_id" />
             </Principal>
-            <Dependent Role="prescribing">
+            <Dependent Role="Prescribing">
               <PropertyRef Name="diagnostic_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_medicine_detail_medicine">
-          <End Role="medicine" Type="Self.medicine" Multiplicity="1" />
-          <End Role="medicine_detail" Type="Self.medicine_detail" Multiplicity="*" />
+        <Association Name="FK_Medicine_detail_Medicine">
+          <End Role="Medicine" Type="Self.Medicine" Multiplicity="1" />
+          <End Role="Medicine_detail" Type="Self.Medicine_detail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="medicine">
+            <Principal Role="Medicine">
               <PropertyRef Name="medicine_id" />
             </Principal>
-            <Dependent Role="medicine_detail">
+            <Dependent Role="Medicine_detail">
               <PropertyRef Name="medicine_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_medicine_detail_prescribing">
-          <End Role="prescribing" Type="Self.prescribing" Multiplicity="1" />
-          <End Role="medicine_detail" Type="Self.medicine_detail" Multiplicity="*" />
+        <Association Name="FK_Medicine_detail_Prescribing">
+          <End Role="Prescribing" Type="Self.Prescribing" Multiplicity="1" />
+          <End Role="Medicine_detail" Type="Self.Medicine_detail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="prescribing">
+            <Principal Role="Prescribing">
               <PropertyRef Name="prescribing_id" />
             </Principal>
-            <Dependent Role="medicine_detail">
+            <Dependent Role="Medicine_detail">
               <PropertyRef Name="prescribing_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="diagnostic_detail">
-          <End Role="diagnostic" Type="Self.diagnostic" Multiplicity="*" />
-          <End Role="disease" Type="Self.disease" Multiplicity="*" />
+        <Association Name="Diagnostic_detail">
+          <End Role="Diagnostic" Type="Self.Diagnostic" Multiplicity="*" />
+          <End Role="Disease" Type="Self.Disease" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="TheClinicEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TheClinicEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="book_appointment" EntityType="Self.book_appointment" />
-          <EntitySet Name="diagnostics" EntityType="Self.diagnostic" />
-          <EntitySet Name="diseases" EntityType="Self.disease" />
-          <EntitySet Name="medicines" EntityType="Self.medicine" />
-          <EntitySet Name="patients" EntityType="Self.patient" />
-          <EntitySet Name="prescribings" EntityType="Self.prescribing" />
+          <EntitySet Name="Diagnostics" EntityType="Self.Diagnostic" />
+          <EntitySet Name="Diseases" EntityType="Self.Disease" />
+          <EntitySet Name="Medicines" EntityType="Self.Medicine" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="Prescribings" EntityType="Self.Prescribing" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="timeworks" EntityType="Self.timework" />
+          <EntitySet Name="Timeworks" EntityType="Self.Timework" />
           <EntitySet Name="user_info" EntityType="Self.user_info" />
-          <EntitySet Name="medicine_detail" EntityType="Self.medicine_detail" />
-          <AssociationSet Name="FK_diagnostic_patients" Association="Self.FK_diagnostic_patients">
-            <End Role="patients" EntitySet="patients" />
-            <End Role="diagnostic" EntitySet="diagnostics" />
+          <EntitySet Name="Medicine_detail" EntityType="Self.Medicine_detail" />
+          <AssociationSet Name="FK_Diagnostic_Patients" Association="Self.FK_Diagnostic_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Diagnostic" EntitySet="Diagnostics" />
           </AssociationSet>
-          <AssociationSet Name="FK_prescribing_diagnostic" Association="Self.FK_prescribing_diagnostic">
-            <End Role="diagnostic" EntitySet="diagnostics" />
-            <End Role="prescribing" EntitySet="prescribings" />
+          <AssociationSet Name="FK_Prescribing_Diagnostic" Association="Self.FK_Prescribing_Diagnostic">
+            <End Role="Diagnostic" EntitySet="Diagnostics" />
+            <End Role="Prescribing" EntitySet="Prescribings" />
           </AssociationSet>
-          <AssociationSet Name="FK_medicine_detail_medicine" Association="Self.FK_medicine_detail_medicine">
-            <End Role="medicine" EntitySet="medicines" />
-            <End Role="medicine_detail" EntitySet="medicine_detail" />
+          <AssociationSet Name="FK_Medicine_detail_Medicine" Association="Self.FK_Medicine_detail_Medicine">
+            <End Role="Medicine" EntitySet="Medicines" />
+            <End Role="Medicine_detail" EntitySet="Medicine_detail" />
           </AssociationSet>
-          <AssociationSet Name="FK_medicine_detail_prescribing" Association="Self.FK_medicine_detail_prescribing">
-            <End Role="prescribing" EntitySet="prescribings" />
-            <End Role="medicine_detail" EntitySet="medicine_detail" />
+          <AssociationSet Name="FK_Medicine_detail_Prescribing" Association="Self.FK_Medicine_detail_Prescribing">
+            <End Role="Prescribing" EntitySet="Prescribings" />
+            <End Role="Medicine_detail" EntitySet="Medicine_detail" />
           </AssociationSet>
-          <AssociationSet Name="diagnostic_detail" Association="Self.diagnostic_detail">
-            <End Role="diagnostic" EntitySet="diagnostics" />
-            <End Role="disease" EntitySet="diseases" />
+          <AssociationSet Name="Diagnostic_detail" Association="Self.Diagnostic_detail">
+            <End Role="Diagnostic" EntitySet="Diagnostics" />
+            <End Role="Disease" EntitySet="Diseases" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -460,7 +458,7 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TheClinicModelStoreContainer" CdmEntityContainer="TheClinicEntities">
+        <EntityContainerMapping StorageEntityContainer="TheClinicModelStoreContainer" CdmEntityContainer="TheClinicEntities1">
           <EntitySetMapping Name="book_appointment">
             <EntityTypeMapping TypeName="TheClinicModel.book_appointment">
               <MappingFragment StoreEntitySet="book_appointment">
@@ -473,43 +471,42 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="diagnostics">
-            <EntityTypeMapping TypeName="TheClinicModel.diagnostic">
-              <MappingFragment StoreEntitySet="diagnostic">
+          <EntitySetMapping Name="Diagnostics">
+            <EntityTypeMapping TypeName="TheClinicModel.Diagnostic">
+              <MappingFragment StoreEntitySet="Diagnostic">
                 <ScalarProperty Name="diagnostic_id" ColumnName="diagnostic_id" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
-                <ScalarProperty Name="disease_id" ColumnName="disease_id" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="note" ColumnName="note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="diseases">
-            <EntityTypeMapping TypeName="TheClinicModel.disease">
-              <MappingFragment StoreEntitySet="disease">
+          <EntitySetMapping Name="Diseases">
+            <EntityTypeMapping TypeName="TheClinicModel.Disease">
+              <MappingFragment StoreEntitySet="Disease">
                 <ScalarProperty Name="disease_id" ColumnName="disease_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="note" ColumnName="note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="medicines">
-            <EntityTypeMapping TypeName="TheClinicModel.medicine">
-              <MappingFragment StoreEntitySet="medicine">
+          <EntitySetMapping Name="Medicines">
+            <EntityTypeMapping TypeName="TheClinicModel.Medicine">
+              <MappingFragment StoreEntitySet="Medicine">
                 <ScalarProperty Name="medicine_id" ColumnName="medicine_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="original_medicine" ColumnName="original_medicine" />
-                <ScalarProperty Name="input_date" ColumnName="input_date" />
-                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="price_per_unit" ColumnName="price_per_unit" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="input_date" ColumnName="input_date" />
+                <ScalarProperty Name="original_medicine" ColumnName="original_medicine" />
+                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="patients">
-            <EntityTypeMapping TypeName="TheClinicModel.patient">
-              <MappingFragment StoreEntitySet="patients">
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="TheClinicModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="age" ColumnName="age" />
@@ -519,13 +516,13 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="prescribings">
-            <EntityTypeMapping TypeName="TheClinicModel.prescribing">
-              <MappingFragment StoreEntitySet="prescribing">
+          <EntitySetMapping Name="Prescribings">
+            <EntityTypeMapping TypeName="TheClinicModel.Prescribing">
+              <MappingFragment StoreEntitySet="Prescribing">
                 <ScalarProperty Name="prescribing_id" ColumnName="prescribing_id" />
                 <ScalarProperty Name="diagnostic_id" ColumnName="diagnostic_id" />
-                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="examination_fee" ColumnName="examination_fee" />
+                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -541,10 +538,10 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="timeworks">
-            <EntityTypeMapping TypeName="TheClinicModel.timework">
-              <MappingFragment StoreEntitySet="timework">
-                <ScalarProperty Name="id" ColumnName="id" />
+          <EntitySetMapping Name="Timeworks">
+            <EntityTypeMapping TypeName="TheClinicModel.Timework">
+              <MappingFragment StoreEntitySet="Timework">
+                <ScalarProperty Name="timework_id" ColumnName="timework_id" />
                 <ScalarProperty Name="session" ColumnName="session" />
                 <ScalarProperty Name="begin_time" ColumnName="begin_time" />
                 <ScalarProperty Name="end_time" ColumnName="end_time" />
@@ -558,28 +555,28 @@ FROM [dbo].[medicine_detail] AS [medicine_detail]</DefiningQuery>
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="medicine_detail">
-            <EntityTypeMapping TypeName="TheClinicModel.medicine_detail">
-              <MappingFragment StoreEntitySet="medicine_detail">
+          <EntitySetMapping Name="Medicine_detail">
+            <EntityTypeMapping TypeName="TheClinicModel.Medicine_detail">
+              <MappingFragment StoreEntitySet="Medicine_detail">
                 <ScalarProperty Name="medicine_id" ColumnName="medicine_id" />
                 <ScalarProperty Name="prescribing_id" ColumnName="prescribing_id" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="dosage" ColumnName="dosage" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="note" ColumnName="note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="diagnostic_detail" TypeName="TheClinicModel.diagnostic_detail" StoreEntitySet="diagnostic_detail">
-            <EndProperty Name="diagnostic">
+          <AssociationSetMapping Name="Diagnostic_detail" TypeName="TheClinicModel.Diagnostic_detail" StoreEntitySet="Diagnostic_detail">
+            <EndProperty Name="Diagnostic">
               <ScalarProperty Name="diagnostic_id" ColumnName="diagnostic_id" />
             </EndProperty>
-            <EndProperty Name="disease">
+            <EndProperty Name="Disease">
               <ScalarProperty Name="disease_id" ColumnName="disease_id" />
             </EndProperty>
           </AssociationSetMapping>

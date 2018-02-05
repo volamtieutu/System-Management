@@ -1,4 +1,4 @@
-﻿@model SystemMngmt.Models.TimeWork
+﻿@model SystemMngmt.Models.Timework
 
 @{
     ViewBag.Title = "Details";
@@ -8,28 +8,36 @@
 <h2>Details</h2>
 
 <div>
-    <h4>TimeWork</h4>
+    <h4>Timework</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Begin_time)
+            @Html.DisplayNameFor(model => model.session)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Begin_time)
+            @Html.DisplayFor(model => model.session)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.End_time)
+            @Html.DisplayNameFor(model => model.begin_time)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.End_time)
+            @Html.DisplayFor(model => model.begin_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.end_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.end_time)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Session }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.timework_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
